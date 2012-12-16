@@ -19,6 +19,17 @@ public class Hand extends CardStack
     }
     
     
+    void view()
+    {
+        h.toString();
+    }
+    
+    void choose(Card c)
+    {
+	h.remove(c);
+    }
+
+
     /*
      * (non-Javadoc)
      * 
@@ -51,6 +62,7 @@ public class Hand extends CardStack
     {
 	h.clear();
     }
+    
 
 
 }
