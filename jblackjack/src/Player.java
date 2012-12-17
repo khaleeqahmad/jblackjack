@@ -19,28 +19,44 @@ public class Player
 
     public String toString()
     {
-	return name + ": " + score;
+	return name + ": " + hand;
     }
 
-    public static void pickUp(Deck d)
+    public static void pickUp(Deck d, int n)
     {
-	Card top = d.draw();
-	hand.add(top);
+	for (int i = 0; i < n; i++)
+	{
+	    Card top = d.draw();
+	    hand.add(top);
 
-	Rank thisRank = top.rank;
-
-	RankMap map = Main.rankmap;
-	int value = map.getRank(thisRank);
-	hand.raiseValue(value);
+	    Rank thisRank = top.rank;
+	    RankMap map = Main.rankmap;
+	    int value = map.getRank(thisRank);
+	    hand.raiseValue(value);
+	    
+	    //if (value > 21) && hand.contains(Ace)
+	    //	value = value - 10;
+	    
+	    System.out.println(top + " has been added to " + name + "'s hand.");
+	}
+	
+	viewHand();
     }
 
-    public static void hit(Deck d)
+    public static void viewHand()
+    {
+	System.out.println(name + "'s hand: " +hand.view());
+    }
+    
+    public void hit(Deck d)
     {
 	if (hand.value < 21)
-	    pickUp(d);
+	    pickUp(d, 1);
 	else
 	    lost();
     }
+    
+
 
     /**
      * 

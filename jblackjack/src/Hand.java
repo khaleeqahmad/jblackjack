@@ -21,9 +21,9 @@ public class Hand extends CardStack
     }
     
     
-    void view()
+    String view()
     {
-        h.toString();
+        return h.toString();
     }
     
     void choose(Card c)
@@ -35,6 +35,21 @@ public class Hand extends CardStack
     {
 	value += val;
     }
+    
+    boolean contains(Card c)
+    {
+	if (h.contains(c))
+	    return true;
+	return false;
+    }
+    
+//    boolean contains(Rank r)
+//    {
+//	if (h.contains())
+//	    return true;
+//	return false;
+//    }
+    
 
 
     /*
