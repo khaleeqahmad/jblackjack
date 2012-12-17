@@ -26,8 +26,11 @@ public class Player
     {
 	for (int i = 0; i < n; i++)
 	{
+	    System.out.println(d.size());
 	    Card top = d.draw();
+	    System.out.println("d"+top+d.size());
 	    hand.add(top);
+	    System.out.println("a"+top+d.size());
 
 	    Rank thisRank = top.rank;
 	    RankMap map = Main.rankmap;
@@ -76,4 +79,15 @@ public class Player
 	System.out.println(name + " has won the game.");
     }
 
+    
+
+    public static void main(String[] args)
+    {
+	Deck d =new Deck();
+	d.shuffle();
+
+	pickUp(d, 1);
+	System.out.println(hand.view());
+	System.out.println(hand.contains(Rank.ace));
+    }
 }

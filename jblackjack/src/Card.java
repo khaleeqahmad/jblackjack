@@ -11,8 +11,8 @@ import java.util.Hashtable;
  */
 public class Card
 {
-    Suit suit;
-    Rank rank;
+    static Suit suit;
+    static Rank rank;
     
 //    static HashMap<Rank, Integer> ranks = new HashMap<Rank, Integer>(13);
     
@@ -47,6 +47,26 @@ public class Card
     public String toString()
     {
 	return rank + " of " + suit;
+    }
+
+    public static Suit getSuit()
+    {
+        return suit;
+    }
+
+    public void setSuit(Suit suit)
+    {
+        this.suit = suit;
+    }
+
+    public static Rank getRank()
+    {
+        return rank;
+    }
+
+    public void setRank(Rank rank)
+    {
+        this.rank = rank;
     }
 
 }

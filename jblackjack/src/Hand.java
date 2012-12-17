@@ -43,12 +43,12 @@ public class Hand extends CardStack
 	return false;
     }
     
-//    boolean contains(Rank r)
-//    {
-//	if (h.contains())
-//	    return true;
-//	return false;
-//    }
+    boolean contains(Rank r)
+    {
+	if (h.contains( Card.getRank() == r))
+	    return true;
+	return false;
+    }
     
 
 

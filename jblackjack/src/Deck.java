@@ -85,6 +85,15 @@ public class Deck extends CardStack
 	d.clear();
     }
 
+    /**
+     * @return
+     */
+    public int size()
+    {
+	// TODO Auto-generated method stub
+	return d.size();
+    }
+
     //    public static void main(String[] args)
     //    {
     //	buildDeck();
