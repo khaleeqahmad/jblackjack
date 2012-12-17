@@ -28,4 +28,9 @@ public class RankMap
 	ranks.put(Rank.king, 10);
 	ranks.put(Rank.ace, 11);
     }
+    
+    int getRank(Rank key)
+    {
+	return ranks.get(key);
+    }
 }

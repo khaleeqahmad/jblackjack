@@ -12,10 +12,12 @@ import java.util.Collections;
 public class Hand extends CardStack
 {
     ArrayList<Card> h;
+    int value;
 
     Hand()
     {
 	h = new ArrayList<Card>();
+	value = 0;
     }
     
     
@@ -27,6 +29,11 @@ public class Hand extends CardStack
     void choose(Card c)
     {
 	h.remove(c);
+    }
+    
+    void raiseValue(int val)
+    {
+	value += val;
     }
 
 
