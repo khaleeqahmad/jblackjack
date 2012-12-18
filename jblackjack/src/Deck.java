@@ -41,7 +41,9 @@ public class Deck //extends CardStack
 	    }
 	}
 
-	System.out.println(d);
+	shuffle();
+	//System.out.println(d);
+
 
     }
 
