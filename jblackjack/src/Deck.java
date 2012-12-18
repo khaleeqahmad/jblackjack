@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Stack;
 
@@ -11,7 +12,7 @@ import java.util.Stack;
  */
 public class Deck //extends CardStack
 {
-    static Stack<Card> d = new Stack<Card>();
+    static ArrayList<Card> d = new ArrayList<Card>();
 
     Deck()
     {
@@ -54,12 +55,12 @@ public class Deck //extends CardStack
 
     public static Card peek()
     {
-	return d.peek();
+	return d.get(0);
     }
 
     public Card draw()
     {
-	return d.pop();
+	return d.remove(0);
     }
 
     /*
@@ -70,7 +71,7 @@ public class Deck //extends CardStack
     //    @Override
     public static void add(Card c)
     {
-	d.addElement(c);
+	d.add(c);
     }
 
     /*
