@@ -9,7 +9,7 @@ import java.util.Stack;
  * @author Khaleeq Ahmad
  * 
  */
-public class Deck extends CardStack
+public class Deck //extends CardStack
 {
     static Stack<Card> d = new Stack<Card>();
 
@@ -19,9 +19,9 @@ public class Deck extends CardStack
 	{
 	    clear();
 	}
-	
+
 	buildDeck();
-	
+
 	shuffle();
 
     }
@@ -29,25 +29,28 @@ public class Deck extends CardStack
     /**
      * 
      */
-    private void buildDeck()
+    private static void buildDeck()
     {
 
 	for (Suit suit : Suit.values())
 	{
 	    for (Rank rank : Rank.values())
 	    {
-		Card currentCard = new Card(suit, rank);
-		add(currentCard);
+		//System.out.println(suit + " " + rank);
+		add(new Card(suit, rank));
 	    }
 	}
+
+	System.out.println(d);
+
     }
 
-    public Card peek()
+    public static Card peek()
     {
 	return d.peek();
     }
 
-    public Card draw()
+    public static Card draw()
     {
 	return d.pop();
     }
@@ -57,8 +60,8 @@ public class Deck extends CardStack
      * 
      * @see CardStack#place(Card)
      */
-    @Override
-    public void add(Card c)
+    //    @Override
+    public static void add(Card c)
     {
 	d.addElement(c);
     }
@@ -68,8 +71,8 @@ public class Deck extends CardStack
      * 
      * @see CardStack#shuffle()
      */
-    @Override
-    public void shuffle()
+    //    @Override
+    public static void shuffle()
     {
 	Collections.shuffle(d);
     }
@@ -79,7 +82,7 @@ public class Deck extends CardStack
      * 
      * @see CardStack#clear()
      */
-    @Override
+    // @Override
     public void clear()
     {
 	d.clear();
@@ -94,30 +97,35 @@ public class Deck extends CardStack
 	return d.size();
     }
 
-    //    public static void main(String[] args)
-    //    {
-    //	buildDeck();
-    //	System.out.println("After build" + d.size());
-    //
-    //	Card c = draw();
-    //	System.out.println("After store draw" + d.size());
-    //
-    //	System.out.println(c);
-    //	System.out.println("After print draw" + d.size());
-    //
-    //	place(c);
-    //	System.out.println("After place back" + d.size());
-    //
-    //	System.out.println(peek());
-    //	System.out.println("After peek" + d.size());
-    //
-    //	shuffle();
-    //	System.out.println("Shuffle: " + peek());
-    //	System.out.println("Shuffle size" + d.size());
-    //
-    //	shuffle();
-    //	System.out.println("Shuffle: " + draw());
-    //	System.out.println("Shuffle size" + d.size());
-    //    }
+    //        public static void main(String[] args)
+    //        {
+    //    	buildDeck();
+    //    	System.out.println("After build" + d.size());
+    //    
+    //    	Card c = draw();
+    //    	System.out.println("After store draw" + d.size());
+    //    
+    //    	System.out.println(c);
+    //    	System.out.println("After print draw" + d.size());
+    //    
+    //    	add(c);
+    //    	System.out.println("After place back" + d.size());
+    //    
+    //    	System.out.println(peek());
+    //    	System.out.println("After peek" + d.size());
+    //    
+    //    	shuffle();
+    //    	System.out.println("Shuffle: " + peek());
+    //    	System.out.println("Shuffle size" + d.size());
+    //    
+    //    	shuffle();
+    //    	System.out.println("Shuffle: " + draw());
+    //    	System.out.println("Shuffle size" + d.size());
+    //        }
+
+    public static void main(String[] args)
+    {
+	buildDeck();
+    }
 
 }
