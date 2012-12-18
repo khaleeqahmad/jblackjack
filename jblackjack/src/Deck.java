@@ -53,14 +53,19 @@ public class Deck //extends CardStack
         return d.toString();
     }
 
-    public static Card peek()
+    public Card peek()
     {
 	return d.get(0);
+    }
+    
+    public Card peek(int i)
+    {
+	return d.get(size()-1);
     }
 
     public Card draw()
     {
-	return d.remove(0);
+	return d.remove(size()-1);
     }
 
     /*
@@ -82,7 +87,7 @@ public class Deck //extends CardStack
     //    @Override
     public static void shuffle()
     {
-	Collections.shuffle(d);
+	//Collections.shuffle(d);
     }
 
     /*

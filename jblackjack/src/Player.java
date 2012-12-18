@@ -24,19 +24,26 @@ public class Player
 
     public static void pickUp(Deck d, int n)
     {
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i <n; i++)
 	{
+	    System.out.println("--------------");
+	    System.out.println(i);
 	    System.out.println("pre D:" + d.size() + " H: " + hand.size());
 	    System.out.println(d.view());
 	    System.out.println(hand.view());
+	    System.out.println(d.peek(0));
 	    Card top = d.draw();
-//	    System.out.println("d"+top+d.size());
 	    hand.add(top);
+	    System.out.println(d.peek(0));
+
+	    
+//	    System.out.println("d"+top+d.size());
 	    System.out.println("post D:"+d.size() + " H: " + hand.size());
 	    System.out.println(d.view());
 	    System.out.println(hand.view());
 	    
-	    System.out.println("--------------");
+	    System.out.println(top + " has been added to " + name + "'s hand.");
+
 
 	    Rank thisRank = top.rank;
 	    RankMap map = Main.rankmap;
@@ -46,7 +53,6 @@ public class Player
 	    //if (value > 21) && hand.contains(Ace)
 	    //	value = value - 10;
 	    
-	    System.out.println(top + " has been added to " + name + "'s hand.");
 	}
 	
 	viewHand();

@@ -17,7 +17,7 @@ public class Hand extends CardStack
 
     Hand()
     {
-	h = new ArrayList<Card>();
+	h = new ArrayList<Card>(0);
 	value = 0;
     }
 
