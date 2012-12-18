@@ -105,4 +105,12 @@ public class Hand extends CardStack
 	h.clear();
     }
 
+    /**
+     * @return
+     */
+    public int size()
+    {
+	return h.size();
+    }
+
 }

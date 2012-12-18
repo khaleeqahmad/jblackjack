@@ -26,11 +26,17 @@ public class Player
     {
 	for (int i = 0; i < n; i++)
 	{
-	    System.out.println(d.size());
+	    System.out.println("pre D:" + d.size() + " H: " + hand.size());
+	    System.out.println(d.view());
+	    System.out.println(hand.view());
 	    Card top = d.draw();
-	    System.out.println("d"+top+d.size());
+//	    System.out.println("d"+top+d.size());
 	    hand.add(top);
-	    System.out.println("a"+top+d.size());
+	    System.out.println("post D:"+d.size() + " H: " + hand.size());
+	    System.out.println(d.view());
+	    System.out.println(hand.view());
+	    
+	    System.out.println("--------------");
 
 	    Rank thisRank = top.rank;
 	    RankMap map = Main.rankmap;
@@ -84,9 +90,9 @@ public class Player
     public static void main(String[] args)
     {
 	Deck d =new Deck();
-	d.shuffle();
+	//d.shuffle();
 
-	pickUp(d, 1);
+	pickUp(d, 52);
 	System.out.println(hand.view());
 	System.out.println(hand.contains(Rank.ace));
     }

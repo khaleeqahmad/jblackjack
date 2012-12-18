@@ -47,12 +47,17 @@ public class Deck //extends CardStack
 
     }
 
+    String view()
+    {
+        return d.toString();
+    }
+
     public static Card peek()
     {
 	return d.peek();
     }
 
-    public static Card draw()
+    public Card draw()
     {
 	return d.pop();
     }
