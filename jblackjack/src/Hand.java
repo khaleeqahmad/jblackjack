@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 
 /**
  * 
@@ -19,38 +20,57 @@ public class Hand extends CardStack
 	h = new ArrayList<Card>();
 	value = 0;
     }
-    
-    
+
     String view()
     {
-        return h.toString();
+	return h.toString();
     }
-    
+
     void choose(Card c)
     {
 	h.remove(c);
     }
-    
+
     void raiseValue(int val)
     {
 	value += val;
     }
-    
+
     boolean contains(Card c)
     {
-	if (h.contains(c))
-	    return true;
+	Iterator<Card> it = h.iterator();
+	while (it.hasNext())
+	{
+	    Card current = it.next();
+	    if (current == c)
+		return true;
+	}
 	return false;
     }
-    
+
     boolean contains(Rank r)
     {
-	if (h.contains( Card.getRank() == r))
-	    return true;
+	Iterator<Card> it = h.iterator();
+	while (it.hasNext())
+	{
+	    Card current = it.next();
+	    if (current.getRank() == r)
+		return true;
+	}
 	return false;
     }
-    
 
+    boolean contains(Suit s)
+    {
+	Iterator<Card> it = h.iterator();
+	while (it.hasNext())
+	{
+	    Card current = it.next();
+	    if (current.getSuit() == s)
+		return true;
+	}
+	return false;
+    }
 
     /*
      * (non-Javadoc)
@@ -84,7 +104,5 @@ public class Hand extends CardStack
     {
 	h.clear();
     }
-    
-
 
 }
