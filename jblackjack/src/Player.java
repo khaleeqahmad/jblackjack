@@ -24,16 +24,26 @@ public class Player
 
     public static void pickUp(Deck d, int n)
     {
+	boolean initHand = false;
+	if (n < 0)
+	{//hack for intialising the hand to avoid duplicates. Parameter '-1'
+	   initHand = true;
+	   n = Math.abs(n); //set '-1' to 1, in order for the for loop to iterate only once
+	}
 	for (int i = 0; i <n; i++)
 	{
-	    System.out.println("--------------");
+	    System.out.println("--------------" + initHand);
 	    System.out.println(i);
 	    System.out.println("pre D:" + d.size() + " H: " + hand.size());
 	    System.out.println(d.view());
 	    System.out.println(hand.view());
 	    System.out.println(d.peek(0));
 	    Card top = d.draw();
-	    hand.add(top);
+
+	    if (!initHand)// && i > 0) //hack to stop duplicate first cards
+	    {
+		    hand.add(top);
+	    }
 	    System.out.println(d.peek(0));
 
 	    
@@ -98,7 +108,8 @@ public class Player
 	Deck d =new Deck();
 	//d.shuffle();
 
-	pickUp(d, 52);
+	pickUp(d, -1);
+	pickUp(d, 5);
 	System.out.println(hand.view());
 	System.out.println(hand.contains(Rank.ace));
     }
